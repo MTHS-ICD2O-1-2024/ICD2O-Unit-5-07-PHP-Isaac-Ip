@@ -29,23 +29,19 @@
       <div class="right-image">
         <img src="./images/addition.png" alt="Addition" width="250" />
       </div>
-      <br />
-      <div class="page-content">Please enter values below :
-      </div>
       <div class="page-content-php">
-        <form action="answer.php" method="GET">
-          <br />
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="value-1" name="value-1">
-            <label class="mdl-textfield__label" for="value-1">Value 1</label>
-          </div>
-          <br />
-          <br />
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            type="submit">
-            Calculate
-          </button>
-        </form>
+        <div id="submit">
+          <?php
+          $value1 = $_GET["value-1"];
+
+          // process 
+          $sum = 0;
+          for ($i = 1; $i <= $value1; $i++) {
+            $sum += $i;
+          }
+          echo "The sum of numbers from 1 to $value1 is $sum.";
+          ?>
+        </div>
       </div>
     </main>
   </div>
